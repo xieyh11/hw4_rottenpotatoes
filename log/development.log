@@ -1,0 +1,825 @@
+  [1m[36m (1.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateMovies (20111119180638)
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("movies")
+  [1m[36m (1.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (117.8ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (83.1ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (117.6ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (91.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120130161449')
+  [1m[36m (116.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111119180638')[0m
+  [1m[36m (1.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (121.5ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (107.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (116.3ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (99.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120130161449')
+  [1m[36m (91.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111119180638')[0m
+  [1m[36m (1.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (138.8ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (91.4ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (99.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (91.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120130161449')
+  [1m[36m (108.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111119180638')[0m
+  [1m[36m (14.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateMovies (20111119180638)
+Migrating to AddDirectorField (20131029081827)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "movies" ADD "director" varchar(255)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20131029081827')
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("movies")[0m
+  [1m[36m (1.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (135.4ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime, "director" varchar(255)) [0m
+  [1m[35m (98.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (107.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (106.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131029081827')
+  [1m[36m (109.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111119180638')[0m
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-11-02 18:20:27 +0800
+  Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+Rendered movies/index.html.haml within layouts/application (86.4ms)
+Compiled application.css  (0ms)  (pid 3340)
+Compiled application.js  (10ms)  (pid 3340)
+Compiled jquery.js  (19ms)  (pid 3340)
+Compiled jquery_ujs.js  (5ms)  (pid 3340)
+Completed 200 OK in 226ms (Views: 222.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-02 18:20:28 +0800
+Served asset /application.js - 200 OK (2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-02 18:20:28 +0800
+Served asset /application.css - 200 OK (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-02 18:20:28 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-02 18:20:28 +0800
+Served asset /jquery.js - 304 Not Modified (30ms)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2013-11-02 18:20:34 +0800
+  Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", "1"]]
+ERROR: compiling _app_views_movies_show_html_haml___1369067562219616433_69864993024980 RAISED /home/yuanhang/Documents/hw4_rottenpotatoes/app/views/movies/show.html.haml:32: syntax error, unexpected keyword_ensure, expecting keyword_end
+...:Util.html_safe(_erbout);ensure;@haml_buffer = @haml_buffer....
+...                               ^
+/home/yuanhang/Documents/hw4_rottenpotatoes/app/views/movies/show.html.haml:35: syntax error, unexpected $end, expecting keyword_end
+Function body:           def _app_views_movies_show_html_haml___1369067562219616433_69864993024980(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "movies/show";_old_output_buffer = @output_buffer;;begin;extend Haml::Helpers;_hamlout = @haml_buffer = Haml::Buffer.new(haml_buffer, {:autoclose=>["meta", "img", "link", "br", "hr", "input", "area", "param", "col", "base"], :preserve=>["textarea", "pre", "code"], :attr_wrapper=>"'", :ugly=>false, :format=>:html5, :encoding=>"UTF-8", :escape_html=>true, :escape_attrs=>true, :hyphenate_data_attrs=>true, :cdata=>false});_erbout = _hamlout.buffer;@output_buffer = output_buffer ||= ActionView::OutputBuffer.new rescue nil;;_hamlout.push_text("<h2>#{_hamlout.adjust_tabs(1); 
+
+_hamlout.format_script_false_true_false_false_false_true_false(("Details about #{Haml::Helpers.html_escape((@movie.title))}"
+));}</h2>\n<ul id='details'>\n  <li>\n    Rating:\n    #{_hamlout.adjust_tabs(2); 
+
+
+
+_hamlout.format_script_false_false_false_true_false_true_false(( @movie.rating
+));}\n  </li>\n  <li>\n    Released on:\n    #{
+
+_hamlout.format_script_false_false_false_true_false_true_false(( @movie.release_date.strftime("%B %d, %Y")
+));}\n  </li>\n  <li>\n    Director:\n    #{
+
+_hamlout.format_script_false_false_false_true_false_true_false(( @movie.director
+));}\n  </li>\n</ul>\n<h3>Description:</h3>\n<p id='description'>#{_hamlout.adjust_tabs(-1); 
+
+
+_hamlout.format_script_false_true_false_true_false_true_false((@movie.description
+));}</p>\n<h3>Movies by same director:</h3>\n", 0, false);
+
+ if @sameDirectorMovies
+_hamlout.push_text("<ul>\n", 1, false);
+ @sameDirectorMovies.each do |movie|
+_hamlout.push_text("  <li>\n    <td>#{_hamlout.adjust_tabs(2); 
+_hamlout.format_script_false_true_false_true_false_true_false((link_to "#{movie.title}", movie_path(movie)
+));}</td>\n  </li>\n</ul>\n", -2, false);end;_hamlout.push_text("#{
+_hamlout.format_script_false_false_false_true_false_true_false(( link_to 'Edit', edit_movie_path(@movie)
+));}\n#{_hamlout.format_script_false_false_false_true_false_true_false(( button_to 'Delete', movie_path(@movie), :method => :delete, :confirm => 'Are you sure?'
+));}\n#{_hamlout.format_script_false_false_false_true_false_true_false(( link_to 'Back to movie list', movies_path
+));}\n<div>\n  #{_hamlout.adjust_tabs(1); 
+_hamlout.format_script_false_false_false_true_false_true_false(( link_to 'Find Movies With Same Director', "/movies/" + @movie.id.to_s + "/similar"
+));}\n</div>\n", -1, false);::Haml::Util.html_safe(_erbout);ensure;@haml_buffer = @haml_buffer.upper if @haml_buffer;end;
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_view/template.rb:282:in `module_eval'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_view/template.rb:282:in `compile'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_view/template.rb:190:in `compile!'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_view/template.rb:143:in `block in render'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.1.0/lib/active_support/notifications.rb:55:in `instrument'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_view/template.rb:142:in `render'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:40:in `block (2 levels) in render_template'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_view/renderer/abstract_renderer.rb:33:in `block in instrument'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.1.0/lib/active_support/notifications.rb:53:in `block in instrument'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.1.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.1.0/lib/active_support/notifications.rb:53:in `instrument'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_view/renderer/abstract_renderer.rb:33:in `instrument'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:39:in `block in render_template'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:47:in `render_with_layout'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:38:in `render_template'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:12:in `block in render'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_view/renderer/abstract_renderer.rb:22:in `wrap_formats'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:9:in `render'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_view/renderer/renderer.rb:17:in `render'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/abstract_controller/rendering.rb:120:in `_render_template'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_controller/metal/streaming.rb:250:in `_render_template'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/abstract_controller/rendering.rb:114:in `render_to_body'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_controller/metal/renderers.rb:30:in `render_to_body'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_controller/metal/compatibility.rb:43:in `render_to_body'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/abstract_controller/rendering.rb:99:in `render'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_controller/metal/rendering.rb:16:in `render'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.1.0/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/yuanhang/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.1.0/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/activerecord-3.1.0/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/abstract_controller/base.rb:167:in `process_action'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:416:in `_run__4264561437363512250__process_action__439879521923332999__callbacks'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:386:in `_run_process_action_callbacks'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.1.0/lib/active_support/notifications.rb:53:in `block in instrument'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.1.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.1.0/lib/active_support/notifications.rb:53:in `instrument'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_controller/metal/params_wrapper.rb:201:in `process_action'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/activerecord-3.1.0/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/abstract_controller/base.rb:121:in `process'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/abstract_controller/rendering.rb:45:in `process'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_controller/metal.rb:193:in `dispatch'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_controller/metal.rb:236:in `block in action'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:65:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:65:in `dispatch'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:29:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/rack-mount-0.8.3/lib/rack/mount/route_set.rb:152:in `block in call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/rack-mount-0.8.3/lib/rack/mount/code_generation.rb:96:in `block in recognize'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/rack-mount-0.8.3/lib/rack/mount/code_generation.rb:89:in `optimized_each'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/rack-mount-0.8.3/lib/rack/mount/code_generation.rb:95:in `recognize'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/rack-mount-0.8.3/lib/rack/mount/route_set.rb:141:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:531:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.3.10/lib/rack/etag.rb:23:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.3.10/lib/rack/conditionalget.rb:25:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_dispatch/middleware/flash.rb:243:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.3.10/lib/rack/session/abstract/id.rb:195:in `context'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.3.10/lib/rack/session/abstract/id.rb:190:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_dispatch/middleware/cookies.rb:326:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/activerecord-3.1.0/lib/active_record/query_cache.rb:62:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/activerecord-3.1.0/lib/active_record/connection_adapters/abstract/connection_pool.rb:477:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:392:in `_run_call_callbacks'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_dispatch/middleware/reloader.rb:68:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.3.10/lib/rack/sendfile.rb:101:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.1.0/lib/rails/rack/logger.rb:13:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.3.10/lib/rack/methodoverride.rb:24:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.3.10/lib/rack/runtime.rb:17:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.1.0/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.3.10/lib/rack/lock.rb:15:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_dispatch/middleware/static.rb:53:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.1.0/lib/rails/engine.rb:455:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.1.0/lib/rails/rack/content_length.rb:16:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.1.0/lib/rails/rack/log_tailer.rb:14:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.3.10/lib/rack/handler/webrick.rb:59:in `service'
+/home/yuanhang/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+/home/yuanhang/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+/home/yuanhang/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+Rendered movies/show.html.haml within layouts/application (44.2ms)
+Completed 500 Internal Server Error in 49ms
+
+ActionView::Template::Error (/home/yuanhang/Documents/hw4_rottenpotatoes/app/views/movies/show.html.haml:32: syntax error, unexpected keyword_ensure, expecting keyword_end
+...:Util.html_safe(_erbout);ensure;@haml_buffer = @haml_buffer....
+...                               ^
+/home/yuanhang/Documents/hw4_rottenpotatoes/app/views/movies/show.html.haml:35: syntax error, unexpected $end, expecting keyword_end):
+    29: = link_to 'Back to movie list', movies_path
+    30: %div
+    31:   = link_to 'Find Movies With Same Director', "/movies/" + @movie.id.to_s + "/similar"
+  
+
+Rendered /home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.0ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-11-02 18:36:05 +0800
+  Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+Rendered movies/index.html.haml within layouts/application (14.0ms)
+Completed 200 OK in 20ms (Views: 17.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-02 18:36:05 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-02 18:36:05 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2013-11-02 18:36:08 +0800
+  Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", "1"]]
+ERROR: compiling _app_views_movies_show_html_haml___1369067562219616433_69864993024980 RAISED /home/yuanhang/Documents/hw4_rottenpotatoes/app/views/movies/show.html.haml:32: syntax error, unexpected keyword_ensure, expecting keyword_end
+...:Util.html_safe(_erbout);ensure;@haml_buffer = @haml_buffer....
+...                               ^
+/home/yuanhang/Documents/hw4_rottenpotatoes/app/views/movies/show.html.haml:35: syntax error, unexpected $end, expecting keyword_end
+Function body:           def _app_views_movies_show_html_haml___1369067562219616433_69864993024980(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "movies/show";_old_output_buffer = @output_buffer;;begin;extend Haml::Helpers;_hamlout = @haml_buffer = Haml::Buffer.new(haml_buffer, {:autoclose=>["meta", "img", "link", "br", "hr", "input", "area", "param", "col", "base"], :preserve=>["textarea", "pre", "code"], :attr_wrapper=>"'", :ugly=>false, :format=>:html5, :encoding=>"UTF-8", :escape_html=>true, :escape_attrs=>true, :hyphenate_data_attrs=>true, :cdata=>false});_erbout = _hamlout.buffer;@output_buffer = output_buffer ||= ActionView::OutputBuffer.new rescue nil;;_hamlout.push_text("<h2>#{_hamlout.adjust_tabs(1); 
+
+_hamlout.format_script_false_true_false_false_false_true_false(("Details about #{Haml::Helpers.html_escape((@movie.title))}"
+));}</h2>\n<ul id='details'>\n  <li>\n    Rating:\n    #{_hamlout.adjust_tabs(2); 
+
+
+
+_hamlout.format_script_false_false_false_true_false_true_false(( @movie.rating
+));}\n  </li>\n  <li>\n    Released on:\n    #{
+
+_hamlout.format_script_false_false_false_true_false_true_false(( @movie.release_date.strftime("%B %d, %Y")
+));}\n  </li>\n  <li>\n    Director:\n    #{
+
+_hamlout.format_script_false_false_false_true_false_true_false(( @movie.director
+));}\n  </li>\n</ul>\n<h3>Description:</h3>\n<p id='description'>#{_hamlout.adjust_tabs(-1); 
+
+
+_hamlout.format_script_false_true_false_true_false_true_false((@movie.description
+));}</p>\n<h3>Movies by same director:</h3>\n", 0, false);
+
+ if @sameDirectorMovies
+_hamlout.push_text("<ul>\n", 1, false);
+ @sameDirectorMovies.each do |movie|
+_hamlout.push_text("  <li>\n    <td>#{_hamlout.adjust_tabs(2); 
+_hamlout.format_script_false_true_false_true_false_true_false((link_to "#{movie.title}", movie_path(movie)
+));}</td>\n  </li>\n</ul>\n", -2, false);end;_hamlout.push_text("#{
+_hamlout.format_script_false_false_false_true_false_true_false(( link_to 'Edit', edit_movie_path(@movie)
+));}\n#{_hamlout.format_script_false_false_false_true_false_true_false(( button_to 'Delete', movie_path(@movie), :method => :delete, :confirm => 'Are you sure?'
+));}\n#{_hamlout.format_script_false_false_false_true_false_true_false(( link_to 'Back to movie list', movies_path
+));}\n<div>\n  #{_hamlout.adjust_tabs(1); 
+_hamlout.format_script_false_false_false_true_false_true_false(( link_to 'Find Movies With Same Director', "/movies/" + @movie.id.to_s + "/similar"
+));}\n</div>\n", -1, false);::Haml::Util.html_safe(_erbout);ensure;@haml_buffer = @haml_buffer.upper if @haml_buffer;end;
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_view/template.rb:282:in `module_eval'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_view/template.rb:282:in `compile'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_view/template.rb:190:in `compile!'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_view/template.rb:143:in `block in render'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.1.0/lib/active_support/notifications.rb:55:in `instrument'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_view/template.rb:142:in `render'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:40:in `block (2 levels) in render_template'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_view/renderer/abstract_renderer.rb:33:in `block in instrument'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.1.0/lib/active_support/notifications.rb:53:in `block in instrument'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.1.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.1.0/lib/active_support/notifications.rb:53:in `instrument'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_view/renderer/abstract_renderer.rb:33:in `instrument'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:39:in `block in render_template'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:47:in `render_with_layout'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:38:in `render_template'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:12:in `block in render'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_view/renderer/abstract_renderer.rb:22:in `wrap_formats'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:9:in `render'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_view/renderer/renderer.rb:17:in `render'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/abstract_controller/rendering.rb:120:in `_render_template'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_controller/metal/streaming.rb:250:in `_render_template'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/abstract_controller/rendering.rb:114:in `render_to_body'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_controller/metal/renderers.rb:30:in `render_to_body'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_controller/metal/compatibility.rb:43:in `render_to_body'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/abstract_controller/rendering.rb:99:in `render'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_controller/metal/rendering.rb:16:in `render'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.1.0/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/yuanhang/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.1.0/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/activerecord-3.1.0/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/abstract_controller/base.rb:167:in `process_action'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:416:in `_run__4264561437363512250__process_action__439879521923332999__callbacks'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:386:in `_run_process_action_callbacks'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.1.0/lib/active_support/notifications.rb:53:in `block in instrument'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.1.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.1.0/lib/active_support/notifications.rb:53:in `instrument'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_controller/metal/params_wrapper.rb:201:in `process_action'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/activerecord-3.1.0/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/abstract_controller/base.rb:121:in `process'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/abstract_controller/rendering.rb:45:in `process'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_controller/metal.rb:193:in `dispatch'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_controller/metal.rb:236:in `block in action'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:65:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:65:in `dispatch'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:29:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/rack-mount-0.8.3/lib/rack/mount/route_set.rb:152:in `block in call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/rack-mount-0.8.3/lib/rack/mount/code_generation.rb:96:in `block in recognize'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/rack-mount-0.8.3/lib/rack/mount/code_generation.rb:89:in `optimized_each'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/rack-mount-0.8.3/lib/rack/mount/code_generation.rb:95:in `recognize'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/rack-mount-0.8.3/lib/rack/mount/route_set.rb:141:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:531:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.3.10/lib/rack/etag.rb:23:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.3.10/lib/rack/conditionalget.rb:25:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_dispatch/middleware/flash.rb:243:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.3.10/lib/rack/session/abstract/id.rb:195:in `context'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.3.10/lib/rack/session/abstract/id.rb:190:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_dispatch/middleware/cookies.rb:326:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/activerecord-3.1.0/lib/active_record/query_cache.rb:62:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/activerecord-3.1.0/lib/active_record/connection_adapters/abstract/connection_pool.rb:477:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:392:in `_run_call_callbacks'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_dispatch/middleware/reloader.rb:68:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.3.10/lib/rack/sendfile.rb:101:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.1.0/lib/rails/rack/logger.rb:13:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.3.10/lib/rack/methodoverride.rb:24:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.3.10/lib/rack/runtime.rb:17:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.1.0/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.3.10/lib/rack/lock.rb:15:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_dispatch/middleware/static.rb:53:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.1.0/lib/rails/engine.rb:455:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.1.0/lib/rails/rack/content_length.rb:16:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.1.0/lib/rails/rack/log_tailer.rb:14:in `call'
+/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.3.10/lib/rack/handler/webrick.rb:59:in `service'
+/home/yuanhang/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+/home/yuanhang/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+/home/yuanhang/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+Rendered movies/show.html.haml within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 8ms
+
+ActionView::Template::Error (/home/yuanhang/Documents/hw4_rottenpotatoes/app/views/movies/show.html.haml:32: syntax error, unexpected keyword_ensure, expecting keyword_end
+...:Util.html_safe(_erbout);ensure;@haml_buffer = @haml_buffer....
+...                               ^
+/home/yuanhang/Documents/hw4_rottenpotatoes/app/views/movies/show.html.haml:35: syntax error, unexpected $end, expecting keyword_end):
+    29: = link_to 'Back to movie list', movies_path
+    30: %div
+    31:   = link_to 'Find Movies With Same Director', "/movies/" + @movie.id.to_s + "/similar"
+  
+
+Rendered /home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+Rendered /home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (3.2ms)
+
+
+Started GET "/movies/" for 127.0.0.1 at 2013-11-02 18:38:24 +0800
+  Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+Rendered movies/index.html.haml within layouts/application (14.3ms)
+Completed 200 OK in 21ms (Views: 18.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-02 18:38:25 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-02 18:38:25 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2013-11-02 18:38:26 +0800
+  Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", "1"]]
+Rendered movies/show.html.haml within layouts/application (9.3ms)
+Completed 200 OK in 16ms (Views: 14.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-02 18:38:26 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-02 18:38:26 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies/1/similar" for 127.0.0.1 at 2013-11-02 18:38:38 +0800
+
+ActionController::RoutingError (No route matches [GET] "/movies/1/similar"):
+  
+
+Rendered /home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2013-11-02 18:40:08 +0800
+  Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Rendered movies/show.html.haml within layouts/application (36.0ms)
+Completed 200 OK in 41ms (Views: 39.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-02 18:40:08 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-02 18:40:08 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies/1/similar" for 127.0.0.1 at 2013-11-02 18:40:09 +0800
+  Processing by MoviesController#similar as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", "1"]]
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 12ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-11-02 18:40:09 +0800
+  Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+Rendered movies/index.html.haml within layouts/application (45.5ms)
+Completed 200 OK in 52ms (Views: 49.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-02 18:40:10 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-02 18:40:10 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-11-02 18:45:00 +0800
+  Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
+Rendered movies/index.html.haml within layouts/application (12.8ms)
+Completed 200 OK in 19ms (Views: 16.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-02 18:45:00 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-02 18:45:00 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2013-11-02 18:45:02 +0800
+  Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Rendered movies/show.html.haml within layouts/application (37.3ms)
+Completed 200 OK in 43ms (Views: 41.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-02 18:45:02 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-02 18:45:02 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies/1/similar" for 127.0.0.1 at 2013-11-02 18:45:05 +0800
+  Processing by MoviesController#similar as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", "1"]]
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 7ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-11-02 18:45:05 +0800
+  Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+Rendered movies/index.html.haml within layouts/application (13.5ms)
+Completed 200 OK in 19ms (Views: 17.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-02 18:45:05 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-02 18:45:05 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-11-02 18:46:08 +0800
+  Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
+Rendered movies/index.html.haml within layouts/application (14.1ms)
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-02 18:46:08 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-02 18:46:08 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2013-11-02 18:46:09 +0800
+  Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Rendered movies/show.html.haml within layouts/application (9.0ms)
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-02 18:46:10 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-02 18:46:10 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies/1/similar" for 127.0.0.1 at 2013-11-02 18:46:11 +0800
+  Processing by MoviesController#similar as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", "1"]]
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 7ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-11-02 18:46:11 +0800
+  Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+Rendered movies/index.html.haml within layouts/application (14.6ms)
+Completed 200 OK in 21ms (Views: 19.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-02 18:46:12 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-02 18:46:12 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies/similar" for 127.0.0.1 at 2013-11-02 18:46:45 +0800
+  Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"similar"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", "similar"]]
+Completed 404 Not Found in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find Movie with id=similar):
+  app/controllers/movies_controller.rb:5:in `show'
+
+Rendered /home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.4ms)
+Rendered /home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+Rendered /home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.7ms)
+
+
+Started GET "/movies/1/similar" for 127.0.0.1 at 2013-11-02 18:46:57 +0800
+  Processing by MoviesController#similar as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 7ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-11-02 18:46:57 +0800
+  Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
+Rendered movies/index.html.haml within layouts/application (13.4ms)
+Completed 200 OK in 20ms (Views: 17.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-02 18:46:57 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-02 18:46:57 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2013-11-02 18:48:39 +0800
+  Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Rendered movies/show.html.haml within layouts/application (7.0ms)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-02 18:48:39 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-02 18:48:39 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies/1/edit" for 127.0.0.1 at 2013-11-02 18:48:41 +0800
+  Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", "1"]]
+Rendered movies/edit.html.haml within layouts/application (10.8ms)
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-02 18:48:41 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-02 18:48:41 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started PUT "/movies/1" for 127.0.0.1 at 2013-11-02 18:48:46 +0800
+  Processing by MoviesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"emF0y/XpUVqpD+ucxJDRq3x2o4ZTmTapAqQDiws2c6w=", "movie"=>{"title"=>"Aladdin", "rating"=>"G", "release_date(1i)"=>"1992", "release_date(2i)"=>"11", "release_date(3i)"=>"25", "director"=>"Ymt"}, "commit"=>"Update Movie Info", "id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (9.8ms)[0m  UPDATE "movies" SET "director" = 'Ymt', "updated_at" = '2013-11-02 10:48:46.904028' WHERE "movies"."id" = 1
+Redirected to http://localhost:3000/movies/1
+Completed 302 Found in 189ms
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2013-11-02 18:48:47 +0800
+  Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Rendered movies/show.html.haml within layouts/application (6.5ms)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-02 18:48:47 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-02 18:48:47 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies/1/similar" for 127.0.0.1 at 2013-11-02 18:48:51 +0800
+  Processing by MoviesController#similar as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."director" = 'Ymt'[0m
+Rendered movies/similar.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 57ms (Views: 7.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-02 18:48:51 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-02 18:48:51 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2013-11-02 18:48:55 +0800
+  Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", "1"]]
+Rendered movies/show.html.haml within layouts/application (6.2ms)
+Completed 200 OK in 13ms (Views: 10.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-02 18:48:56 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-02 18:48:56 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-11-02 18:48:57 +0800
+  Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+Rendered movies/index.html.haml within layouts/application (13.9ms)
+Completed 200 OK in 20ms (Views: 18.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-02 18:48:57 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-02 18:48:57 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-11-02 19:04:35 +0800
+  Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
+Rendered movies/index.html.haml within layouts/application (47.9ms)
+Completed 200 OK in 59ms (Views: 54.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-02 19:04:35 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-02 19:04:35 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+  [1m[36m (1.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (131.5ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime, "director" varchar(255)) [0m
+  [1m[35m (98.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (107.6ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (98.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131029081827')
+  [1m[36m (108.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111119180638')[0m
+  [1m[36m (1.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (103.7ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime, "director" varchar(255)) [0m
+  [1m[35m (98.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (107.2ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (108.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131029081827')
+  [1m[36m (99.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111119180638')[0m
+  [1m[36m (1.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (110.5ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime, "director" varchar(255)) [0m
+  [1m[35m (107.1ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (107.6ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (106.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131029081827')
+  [1m[36m (109.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111119180638')[0m
+  [1m[36m (1.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (132.3ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime, "director" varchar(255)) [0m
+  [1m[35m (123.4ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (115.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (114.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131029081827')
+  [1m[36m (91.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111119180638')[0m
+  [1m[36m (1.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (127.0ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime, "director" varchar(255)) [0m
+  [1m[35m (106.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (99.4ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (89.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131029081827')
+  [1m[36m (93.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111119180638')[0m
+  [1m[36m (1.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (122.6ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime, "director" varchar(255)) [0m
+  [1m[35m (82.3ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (82.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (98.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131029081827')
+  [1m[36m (99.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111119180638')[0m
+  [1m[36m (1.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (115.0ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime, "director" varchar(255)) [0m
+  [1m[35m (98.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (107.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (114.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131029081827')
+  [1m[36m (109.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111119180638')[0m
+  [1m[36m (1.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (126.4ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime, "director" varchar(255)) [0m
+  [1m[35m (107.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (91.1ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (99.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131029081827')
+  [1m[36m (83.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111119180638')[0m

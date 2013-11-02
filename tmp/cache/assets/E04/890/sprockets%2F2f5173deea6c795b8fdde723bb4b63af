@@ -1,0 +1,58 @@
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1383387628.712325:@value{I"
+class:EFI"BundledAsset;
+FI"id;
+F"%3e0004f4cc5d8b12a4059ac0b4458db0I"logical_path;
+FI"application.js;
+TI"pathname;
+FI"0$root/app/assets/javascripts/application.js;
+TI"content_type;
+FI"application/javascript;
+FI"
+mtime;
+FI"2013-10-29T12:29:11+08:00;
+FI"	body;
+FI"”// This is a manifest file that'll be compiled into including all the files listed below.
+// Add new JavaScript/Coffee code in separate files in this directory and they'll automatically
+// be included in the compiled file accessible from http://example.com/assets/application.js
+// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
+// the compiled file.
+//
+;
+;
+FI"asset_paths;
+F[I"i/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/jquery-rails-3.0.4/vendor/assets/javascripts/jquery.js;
+TI"m/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/jquery-rails-3.0.4/vendor/assets/javascripts/jquery_ujs.js;
+TI"0$root/app/assets/javascripts/application.js;
+TI"dependency_paths;
+F[	{I"	path;
+FI"0$root/app/assets/javascripts/application.js;
+TI"
+mtime;
+FIu:	Time¤g€ÜT»t
+:@_zoneI"CST;
+T:nano_numiÇ:nano_deni:submicro"EP:offseti€pI"hexdigest;
+F"%0f1cfbc0bc3803a9dbf1a44d1da6ff92{I"	path;
+FI"!$root/app/assets/javascripts;
+TI"
+mtime;
+FIu;¤g€ÜT»t
+;I"CST;
+T;iÇ;i;"EP;i€pI"hexdigest;
+F"%9fc91fc75938cd11a57805188f2a2260{I"	path;
+FI"i/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/jquery-rails-3.0.4/vendor/assets/javascripts/jquery.js;
+TI"
+mtime;
+FIu;åe€	
+Q
+;I"CST;
+T;i;i;"0;i€pI"hexdigest;
+F"%f11cf60ec044cbd1d4dab2286872d640{I"	path;
+FI"m/home/yuanhang/.rvm/gems/ruby-1.9.3-p448/gems/jquery-rails-3.0.4/vendor/assets/javascripts/jquery_ujs.js;
+TI"
+mtime;
+FIu;åe€R(
+Q
+;I"CST;
+T;i;i;" ;i€pI"hexdigest;
+F"%f0fce1eca801ee49a59c039ec30182feI"_version;
+F"%0868aba5d4b750d3a9421721ea3d9b9c
